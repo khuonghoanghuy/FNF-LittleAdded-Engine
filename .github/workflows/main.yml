@@ -24,8 +24,8 @@ jobs:
         run: |
           haxelib setup C:/haxelib
           haxelib --quiet install hmm
+          haxelib --quiet --global install hxCodec 2.5.1
           haxelib run hmm install --global
-          haxelib --never install hxCodec 2.5.1 --global
           haxelib list
         shell: cmd
       - name: Create Version Tag
@@ -67,8 +67,8 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib --quiet install hmm
+          haxelib --quiet --global install hxCodec 2.5.1
           haxelib run hmm install --global
-          haxelib --never install hxCodec 2.5.1 --global
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
