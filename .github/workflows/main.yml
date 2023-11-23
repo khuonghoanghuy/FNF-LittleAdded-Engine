@@ -24,17 +24,17 @@ jobs:
         run: |
           haxelib setup C:/haxelib
           haxelib install hxcpp > nul
-          haxelib install lime
-          haxelib install openfl
-          haxelib --never install flixel
+          haxelib install lime 8.0.1
+          haxelib install openfl 9.2.1
+          haxelib --never install flixel 5.2.2
           haxelib run lime setup flixel
           haxelib run lime setup
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons
+          haxelib install flixel-tools 1.5.1
+          haxelib install flixel-ui 2.5.0
+          haxelib install flixel-addons 3.0.2
           haxelib install tjson
           haxelib install hxjsonast
-          haxelib install hxCodec
+          haxelib install hxCodec 2.5.1
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
@@ -79,17 +79,23 @@ jobs:
 
       - name: Install Haxelib
         run: |
-          haxelib --quiet install lime 7.9.0
-          haxelib --quiet install openfl 9.1.0
-          haxelib --quiet install flixel
-          haxelib --quiet --never run lime setup flixel
-          haxelib --quiet install flixel-tools
-          haxelib --quiet install flixel-ui
-          haxelib --quiet install hscript
-          haxelib --quiet install flixel-addons
-          haxelib --quiet git hxCodec https://github.com/MAJigsaw77/hxCodec
-          haxelib --quiet git linc_luajit https://github.com/Nice-Pain/linc_luajit.git
-          haxelib --quiet git extension-androidtools https://github.com/majigsaw77/extension-androidtools.git
+          haxelib setup ~/haxelib
+          haxelib install hxcpp 4.2.1 > /dev/null
+          haxelib install lime 7.9.0
+          haxelib install openfl 9.1.0
+          haxelib --never install flixel 4.11.0
+          haxelib run lime setup flixel
+          haxelib install flixel-tools
+          haxelib install flixel-ui
+          haxelib install flixel-addons 2.11.0
+          haxelib install tjson
+          haxelib install hxjsonast
+          haxelib install hscript
+          haxelib git hxCodec https://github.com/SPLCoding/hxCodec-but-it-works-xd.git
+          haxelib git linc_luajit https://github.com/Sirox228/linc_luajit
+          haxelib git extension-androidtools https://github.com/MaysLastPlay77/extension-androidtools
+          haxelib install hxcpp-debug-server
+          haxelib list
 
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
