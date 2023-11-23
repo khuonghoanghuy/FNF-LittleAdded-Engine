@@ -45,11 +45,11 @@ class SUtil
 				 */
 				Lib.application.window.alert('If you accepted the permissions you are all good!' + "\nIf you didn't then expect a crash"
 					+ '\nPress Ok to see what happens',
-					'Permissions?');
+					'Permissions Bro?');
 			}
 			else
 			{
-				Lib.application.window.alert('Please grant the game storage permissions in app settings' + '\nPress Ok to close the app', 'Permissions?');
+				Lib.application.window.alert('Please grant the game storage permissions in app settings' + '\nPress Ok to close the app', 'Permissions Bro?');
 				System.exit(1);
 			}
 		}
