@@ -49,6 +49,8 @@ class Main extends Sprite
 	{
 		super();
 
+		SUtil.gameCrashCheck();
+
 		if (stage != null)
 		{
 			init();
@@ -83,7 +85,8 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		SUtil.check();
+		// SUtil.check();
+		SUtil.doTheCheck();
 	
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
