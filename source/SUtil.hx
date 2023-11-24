@@ -38,7 +38,8 @@ class SUtil
 		{
 			if (VERSION.SDK_INT >= VERSION_CODES.M)
 			{
-				Permissions.requestPermission([Permissions.WRITE_EXTERNAL_STORAGE, Permissions.READ_EXTERNAL_STORAGE]);
+				Permissions.requestPermission(Permissions.WRITE_EXTERNAL_STORAGE);
+				Permissions.requestPermission(Permissions.READ_EXTERNAL_STORAGE);
 
 				/**
 				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
